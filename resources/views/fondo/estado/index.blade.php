@@ -12,10 +12,18 @@
 		<div class="table-responsive">
 			<table class="table table-striped table-bordered table-condensed table-hover">
 				<thead>
-					<!-- encabezados de columna -->
-					<th>Id</th>  
-					<th>Estado</th>
-					<th>Descripción</th>
+					@if ($labels->count())
+
+						@foreach ($labels as $lab)
+						<th>{{ $lab->etiqueta}}</th>
+						@endforeach
+
+							@else
+					
+								<th>Idx</th>  
+								<th>Estadox</th>
+								<th>Descripciónx</th>
+					@endif
 				</thead>
 				<!-- campos de la Base de Datos -->
                @foreach ($estados as $cat)

@@ -18,6 +18,7 @@ class TCreditoController extends Controller
 
    	public function index(Request $request)
    	{
+         $labels=DB::table('etiquetas')->where('logicdel','=','1')->where('idmodulo','=','3')->orderby('orden','asc')->get();
 
    		if ($request) {
    			$query=trim($request->get('searchText'));
@@ -26,7 +27,7 @@ class TCreditoController extends Controller
    			->orderby('idtipos_de_creditos','desc')
    			->Paginate(5);
 
-   			return view('fondo.tcredito.index',["creditos"=>$creditos,"searchText"=>$query]);
+   			return view('fondo.tcredito.index',["creditos"=>$creditos,"labels"=>$labels,"searchText"=>$query]);
 
    		}
    	}
@@ -42,7 +43,8 @@ class TCreditoController extends Controller
    		
    		$creditos=new TCredito;
    		$creditos->tipoCredito=$request->get('tipoCredito');
-   		$creditos->descrip=$request->get('descrip');
+   		$creditos->porcentaje=$request->get('porcentaje');
+         $creditos->descrip=$request->get('descrip');
    		$creditos->logicdel='1';
    		$creditos->save();
    		return Redirect::to('fondo/tcredito');
@@ -65,6 +67,7 @@ class TCreditoController extends Controller
    		
    		$creditos=TCredito::findOrFail($id);
    		$creditos->tipoCredito=$request->get('tipoCredito');
+         $creditos->porcentaje=$request->get('porcentaje');
    		$creditos->descrip=$request->get('descrip');
    		$creditos->update();
    		return Redirect::to('fondo/tcredito');

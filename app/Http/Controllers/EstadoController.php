@@ -20,6 +20,8 @@ class EstadoController extends Controller
    	public function index(Request $request)
    	{
 
+         $labels=DB::table('etiquetas')->where('logicdel','=','1')->where('idmodulo','=','2')->orderby('orden','asc')->get();
+
    		if ($request) {
    			$query=trim($request->get('searchText'));
    			$estados=DB::table('estados')->where('estado','LIKE','%'.$query.'%')
@@ -27,7 +29,7 @@ class EstadoController extends Controller
    			->orderby('idestados','desc')
    			->Paginate(5);
 
-   			return view('fondo.estado.index',["estados"=>$estados,"searchText"=>$query]);
+   			return view('fondo.estado.index',["estados"=>$estados,"labels"=>$labels,"searchText"=>$query]);
 
    		}
    	}

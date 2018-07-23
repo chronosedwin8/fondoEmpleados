@@ -13,10 +13,19 @@
 			<table class="table table-striped table-bordered table-condensed table-hover">
 				<thead>
 					<!-- encabezados de columna -->
-					<th>Id</th>  
-					<th>Mes</th>
-					<th>Contración</th>
-					<th>Descripción</th>
+					@if ($labels->count())
+
+						@foreach ($labels as $lab)
+						<th>{{ $lab->etiqueta}}</th>
+						@endforeach
+
+							@else
+							
+								<th>Idx</th>
+								<th>Mesx</th>
+								<th>Contraciónx</th>
+								<th>Descripciónx</th>
+					@endif
 				</thead>
 				<!-- campos de la Base de Datos -->
                @foreach ($meses as $cat)
@@ -34,6 +43,7 @@
 				@endforeach
 			</table>
 		</div>
+		
 		{{$meses->render()}}
 		
 	</div>

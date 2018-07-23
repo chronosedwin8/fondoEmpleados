@@ -6,9 +6,9 @@
     <title>Fondo | Colegio Alemán</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <!-- Bootstrap 3.3.5 -->
+    <!-- Bootstrap 3.3.5 -->    
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
-    <!-- Font Awesome -->
+        <!-- Font Awesome -->
     <link rel="stylesheet" href="{{asset('css/font-awesome.css')}}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{asset('css/AdminLTE.min.css')}}">
@@ -25,7 +25,7 @@
       <header class="main-header">
 
         <!-- Logo -->
-        <a href="index2.html" class="logo">
+        <a href="{{url('')}}" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><b>AD</b>V</span>
           <!-- logo for regular state and mobile devices -->
@@ -97,6 +97,16 @@
                 <li><a href="{{url('fondo/tusuario')}}"><i class="fa fa-circle-o"></i> Tipos de Usuarios</a></li>
                 <li><a href="{{url('fondo/modulo')}}"><i class="fa fa-circle-o"></i> Modulos del Software</a></li>
                 <li><a href="{{url('fondo/etiqueta')}}"><i class="fa fa-circle-o"></i> Etiquetas de Modulos</a></li>
+                <li><a href="{{url('fondo/banco')}}"><i class="fa fa-circle-o"></i> Entidades Bancarias</a></li>
+                <li><a href="{{url('fondo/cuenta')}}"><i class="fa fa-circle-o"></i> Cuentas Bancarias</a></li>
+                <li><a href="{{url('fondo/tcuenta')}}"><i class="fa fa-circle-o"></i> Tipos de Cuentas Bancarias</a></li>
+                <li><a href="{{url('fondo/genero')}}"><i class="fa fa-circle-o"></i> Sexo</a></li>
+                <li><a href="{{url('fondo/civil')}}"><i class="fa fa-circle-o"></i> Estados Civiles</a></li>
+                <li><a href="{{url('fondo/profesion')}}"><i class="fa fa-circle-o"></i> Profesiones</a></li>
+                <li><a href="{{url('fondo/jornada')}}"><i class="fa fa-circle-o"></i> Jornada Laboral</a></li>
+                <li><a href="{{url('fondo/contrato')}}"><i class="fa fa-circle-o"></i> Tipos de Contratos</a></li>
+                <li><a href="{{url('fondo/salario')}}"><i class="fa fa-circle-o"></i> Tipos de Salarios</a></li>
+                <li><a href="{{url('fondo/origen')}}"><i class="fa fa-circle-o"></i> Procedencia de fondos</a></li>
               </ul>
             </li>
             
@@ -178,7 +188,7 @@
                   	<div class="row">
 	                  	<div class="col-md-12">
 		                          <!--Contenido-->
-                              @yield('contenido','Datos fondo')
+                              @yield('contenido')
 		                          <!--Fin Contenido-->
                            </div>
                         </div>
@@ -191,8 +201,11 @@
           </div><!-- /.row -->
 
         </section><!-- /.content -->
+
       </div><!-- /.content-wrapper -->
       <!--Fin-Contenido-->
+
+      
       <footer class="main-footer">
         <div class="pull-right hidden-xs">
           <b>Version: </b> En Construcción

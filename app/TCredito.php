@@ -14,6 +14,7 @@ class TCredito extends Model
 
    protected $fillable =[
    	'tipoCredito',
+   	'porcentaje',
    	'descrip'
    	   	
    ];

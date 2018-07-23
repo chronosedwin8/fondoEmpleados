@@ -19,6 +19,11 @@
             	<label for="tipoCredito">Tipo de Crédito</label>
             	<input type="text" name="tipoCredito" class="form-control" value="{{$creditos->tipoCredito}}" placeholder="Tipo de Credito...">
             </div>
+
+            <div class="form-group">
+            	<label for="porcentaje">Porcentaje</label>
+            	<input type="text" name="porcentaje" class="form-control" value="{{$creditos->porcentaje}}" placeholder="Porcentaje...">
+            </div>
             
             <div class="form-group">
             	<label for="descrip">Descripción</label>

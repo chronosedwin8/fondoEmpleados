@@ -20,14 +20,16 @@ class MesesController extends Controller
    	public function index(Request $request)
    	{
 
-   		if ($request) {
+   		$labels=DB::table('etiquetas')->where('logicdel','=','1')->where('idmodulo','=','1')->orderby('orden','asc')->get();
+
+         if ($request) {
    			$query=trim($request->get('searchText'));
    			$meses=DB::table('meses')->where('mes','LIKE','%'.$query.'%')
    			->where('estado','=','1')
    			->orderby('idmeses','desc')
    			->Paginate(5);
 
-   			return view('fondo.mes.index',["meses"=>$meses,"searchText"=>$query]);
+   			return view('fondo.mes.index',["meses"=>$meses,"labels"=>$labels,"searchText"=>$query]);
 
    		}
    	}

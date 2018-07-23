@@ -25,7 +25,9 @@ class TCreditoFormRequest extends FormRequest
     {
         return [
             'tipoCredito'=>'required|max:45',
+            'porcentaje'=>'required',
             'descrip'=>'max:144',
+
         ];
     }
 }

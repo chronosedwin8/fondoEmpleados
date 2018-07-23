@@ -20,6 +20,8 @@ class TUsuarioController extends Controller
    	public function index(Request $request)
    	{
 
+         $labels=DB::table('etiquetas')->where('logicdel','=','1')->where('idmodulo','=','4')->orderby('orden','asc')->get();
+
    		if ($request) {
    			$query=trim($request->get('searchText'));
    			$tusuario=DB::table('TiposUsers')->where('tipos_usuarios','LIKE','%'.$query.'%')
@@ -27,7 +29,7 @@ class TUsuarioController extends Controller
    			->orderby('idtipos_user','desc')
    			->Paginate(5);
 
-   			return view('fondo.tusuario.index',["tusuario"=>$tusuario,"searchText"=>$query]);
+   			return view('fondo.tusuario.index',["tusuario"=>$tusuario,"labels"=>$labels,"searchText"=>$query]);
 
    		}
    	}

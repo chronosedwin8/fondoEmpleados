@@ -12,16 +12,26 @@
 		<div class="table-responsive">
 			<table class="table table-striped table-bordered table-condensed table-hover">
 				<thead>
-					<!-- encabezados de columna -->
-					<th>Id</th>  
-					<th>Tipo de Crédito</th>
-					<th>Descripción</th>
+					@if ($labels->count())
+
+						@foreach ($labels as $lab)
+						<th>{{ $lab->etiqueta}}</th>
+						@endforeach
+
+							@else
+					 
+								<th>Idx</th>  
+								<th>Tipo de Créditox</th>
+								<th>porcentajex</th>
+								<th>Descripciónx</th>
+					@endif
 				</thead>
 				<!-- campos de la Base de Datos -->
                @foreach ($creditos as $cat)
 				<tr>
 					<td>{{ $cat->idtipos_de_creditos}}</td>
 					<td>{{ $cat->tipoCredito}}</td>
+					<td>{{ $cat->porcentaje}}</td>
 					<td>{{ $cat->descrip}}</td>
 					<td>
 						<a href="{{URL::action('TCreditoController@edit',$cat->idtipos_de_creditos)}}"><button class="btn btn-info">Editar</button></a>

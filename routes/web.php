@@ -49,3 +49,7 @@ Route::resource('fondo/origen','OrigenController');
 
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

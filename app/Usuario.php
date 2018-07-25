@@ -13,18 +13,33 @@ class Usuario extends Model
    public $timestamps=true;
 
    protected $fillable =[
-   	'cedula',
-   	'idtipos_user',
-   	'estado',
-   	'direccion',
-   	'telefono',
-   	'celular',
-   	'barrio',
-   	'email',
-   	'fechaingreso',
-   	'fechanaci',
-   	'salario',
-   	'porcentaje_ahorro'
+      'cedula',
+      'apellido1',
+      'apellido2',
+      'fechanaci',
+      'nombre1',
+      'nombre2',
+      'barrio',
+      'celular',
+      'cod_postal',
+      'direccion',
+      'email',
+      'telefono',
+      'fechaingreso',
+      'nocuentauser',
+      'porcentaje_ahorro',
+      'salario',
+      'idbancouser',
+      'idestadocivil',
+      'idestados',
+      'idgeneros',
+      'idjornadalabora',
+      'idorigenfondos',
+      'idprofesiones',
+      'idtipocontrato',
+      'idtipocuentauser',
+      'idtipos_user',
+      'idtiposalario' 	
    	
    ];
 

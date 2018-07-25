@@ -1,5 +1,7 @@
 <?php
 
+
+
 namespace fondo\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
@@ -24,8 +26,8 @@ class TUsuarioFormRequest extends FormRequest
     public function rules()
     {
         return [
-            'tipos_usuarios'=>'required|max:45',
-            'descrip'=>'max:144',
+        'tipos_usuarios'=>'required|max:45',
+        'descrip'=>'max:144'
         ];
     }
 }
